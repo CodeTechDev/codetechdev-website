@@ -6,10 +6,7 @@
       {{ .Title }}
       {{- if .Draft }}<div class="entry-isdraft"><sup>&nbsp;&nbsp;[draft]</sup></div>{{- end }}
     </h1>
-    <div class="post-description">
-      {{ .Description }}
-    </div>
-    {{- if not (.Param "hideMeta") }}
+    {{- if .Params.hideMeta }}{{ else }}
     <div class="post-meta">
       {{- partial "post_meta.html" . -}}
       {{- if .IsTranslated -}}&nbsp;|&nbsp;
@@ -17,13 +14,7 @@
         {{- i18n "translations" | default "Translations"}}:
         {{- range .Translations }}
         <li>
-          <a href="{{ .Permalink }}">
-            {{- if (and $.Site.Params.displayFullLangName (.Language.LanguageName)) }}
-            {{- .Language.LanguageName | emojify | humanize -}}
-            {{- else }}
-            {{- .Lang | humanize -}}
-            {{- end -}}
-          </a>
+          <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
         </li>
         {{- end }}
       </ul>
@@ -31,12 +22,11 @@
     </div>
     {{- end}}
   </header>
-  {{- $isHidden := ((.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInSingle) | default .Params.cover.hidden )}}
-  {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
-  {{- if (.Param "ShowToc") }}
+  {{- partial "cover.html" (dict "cxt" . "IsHome" false) }}
+  {{- if .Params.ShowToc }}
   <div class="toc">
-    <details {{if (.Param "TocOpen") }} open{{ end }}>
-      <summary accesskey="c" title="(Alt + C)">
+    <details {{if .Params.TocOpen }} open{{ end }}>
+      <summary>
         <div class="details">{{- i18n "toc" | default "Table of Contents" }}</div>
       </summary>
       <blockquote>
@@ -45,14 +35,13 @@
     </details>
   </div>
   {{- end }}
-  <div class="post-content">
-    {{- partial "anchored_headings.html" .Content -}}
-  </div>
+  <div class="post-content">{{ .Content }}</div>
   <footer class="post-footer">
     {{- if .Params.tags }}
     <ul class="post-tags">
-      {{- range ($.GetTerms "tags") }}
-      <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+      {{- range .Params.tags }}
+      {{- $href := print (absLangURL "tags/") (urlize .) }}
+      <li><a href="{{ $href }}">{{ . }}</a></li>
       {{- end }}
     </ul>
     {{- end }}
@@ -61,7 +50,7 @@
     {{- end }}
   </footer>
 
-  {{- if (.Param "comments") }}
+  {{- if and ($.Site.Params.comments) (ne .Params.comments false) }}
   {{- partial "comments.html" . }}
   {{- end }}
 </article>
