@@ -1,7 +1,7 @@
 baseURL : "http://codetechdev.com/"
 languageCode : "en-us"
 title : "CodeTechDev"
-theme : "ananke"
+theme : "PaperMod"
 
 params:
   homeInfoParams:
