@@ -1,0 +1,25 @@
+baseURL : "http://codetechdev.com/"
+languageCode : "en-us"
+title : "CodeTechDev"
+theme : "ananke"
+
+params:
+  homeInfoParams:
+        Title: "Hi there \U0001F44B"
+        Content: Welcome to CTD
+  
+  label:
+        text: "CodeTechDev"
+        icon: /CTD_small.png
+        iconHeight: 35
+  
+  socialIcons:
+        - name: twitter
+          url: "https://twitter.com/codetechdev"
+        - name: youtube
+          url: "https://youtube.com"
+        - name: github
+          url: "https://github.com/codetechdev"
+
+staticDir:
+  - static
