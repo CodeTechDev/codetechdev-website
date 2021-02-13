@@ -7,9 +7,9 @@ params:
   defaultTheme: auto
   title: CodeTechDev
   description: "Welcome to CTD"
-  # ShowReadingTime: true
-  # ShowBreadCrumbs: true
-  # ShowPostNavLinks: true
+  ShowReadingTime: true
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
   homeInfoParams:
         Title: "Hi there \U0001F44B"
         Content: Welcome to CTD
@@ -35,6 +35,8 @@ params:
           url: "https://youtube.com"
         - name: github
           url: "https://github.com/codetechdev"
+        - name: RsS
+          url: "index.xml"
   
   fuseOpts:
         isCaseSensitive: false
@@ -50,14 +52,10 @@ staticDir:
 
 menu:
     main:
-        - identifier: categories
-          name: categories
-          url: /categories/
+        - identifier: archives
+          name: archives
+          url: /archives/
           weight: 10
-        - identifier: tags
-          name: tags
-          url: /tags/
-          weight: 20
         - identifier: search
           name: search
           url: /search/
