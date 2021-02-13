@@ -3,26 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://codetechdev.com/</loc>
+    <loc>https://codetechdev.com/</loc>
     <lastmod>2021-02-01T17:18:05+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://codetechdev.com/posts/my-first-post/</loc>
+    <loc>https://codetechdev.com/posts/my-first-post/</loc>
     <lastmod>2021-02-01T17:18:05+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://codetechdev.com/posts/</loc>
+    <loc>https://codetechdev.com/posts/</loc>
     <lastmod>2021-02-01T17:18:05+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://codetechdev.com/categories/</loc>
+    <loc>https://codetechdev.com/categories/</loc>
   </url>
   
   <url>
-    <loc>http://codetechdev.com/tags/</loc>
+    <loc>https://codetechdev.com/search/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codetechdev.com/tags/</loc>
   </url>
   
 </urlset>

@@ -7,9 +7,9 @@ params:
   defaultTheme: auto
   title: CodeTechDev
   description: "Welcome to CTD"
-  ShowReadingTime: true
-  ShowBreadCrumbs: true
-  ShowPostNavLinks: true
+  # ShowReadingTime: true
+  # ShowBreadCrumbs: true
+  # ShowPostNavLinks: true
   homeInfoParams:
         Title: "Hi there \U0001F44B"
         Content: Welcome to CTD
