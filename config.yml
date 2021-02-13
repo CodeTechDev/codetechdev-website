@@ -8,7 +8,8 @@ params:
   title: CodeTechDev
   description: "Welcome to CTD"
   ShowReadingTime: true
-
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
   homeInfoParams:
         Title: "Hi there \U0001F44B"
         Content: Welcome to CTD
@@ -61,3 +62,9 @@ menu:
           name: example.org
           url: https://example.org
           weight: 30
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
